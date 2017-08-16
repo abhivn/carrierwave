@@ -1,0 +1,21 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @recipe.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @recipe.description %>
+</p>
+
+<p>
+  <% if @recipe.cover_url.nil? %>
+  <%= image_tag "default.png", height: 200, width: 200 %>
+  <% else  %>
+  <%= image_tag @recipe.cover_url(:large) %>
+  <% end %>
+</p>
+<%= link_to 'Edit', edit_recipe_path(@recipe) %> |
+<%= link_to 'Back', recipes_path %>
